@@ -4,67 +4,60 @@
 ===========================
 */
 
-// Bot choosing an option
+function getBotChoice() {
+  BotChoice = Math.random();
 
-BotChoice = Math.random();
-
-if (BotChoice >= 0 && BotChoice <= 0.33) {
-  BotChoice = "r";
-} else if (BotChoice >= 0.33 && BotChoice < 0.66) {
-  BotChoice = "p";
-} else if (BotChoice >= 0.66 && BotChoice < 1) {
-  BotChoice = "s";
+  if (BotChoice >= 0 && BotChoice <= 0.33) {
+    BotChoice = "r";
+  } else if (BotChoice >= 0.33 && BotChoice < 0.66) {
+    BotChoice = "p";
+  } else if (BotChoice >= 0.66 && BotChoice < 1) {
+    BotChoice = "s";
+  }
+  document.getElementById("botChoice").textContent =
+    "Bot chooses: " + BotChoice;
 }
 
-console.log("Bot chooses " + BotChoice); // Testing
-
-// Player deciding an option
-
-let UserChoice = null;
+getBotChoice();
 
 document.getElementById("rockBtn").onclick = function () {
   UserChoice = "r";
-  console.log(UserChoice);
   printResult();
+  getBotChoice();
 };
 
 document.getElementById("paperBtn").onclick = function () {
   UserChoice = "p";
-  console.log(UserChoice);
   printResult();
+  getBotChoice();
 };
 
 document.getElementById("scissorBtn").onclick = function () {
   UserChoice = "s";
-  console.log(UserChoice);
   printResult();
+  getBotChoice();
 };
 
-console.log("User chooses " + UserChoice); // Testing
-
-// Check if user's option actually makes sense
-
 function printResult() {
-  
   if (UserChoice == BotChoice) {
-    console.log("Ah... Thats a draw...");
+    document.getElementById("Result").textContent = "Ah... Thats a draw...";
   }
   // Rock-Paper possibilites
   else if (UserChoice == "r" && BotChoice == "p") {
-    console.log("Bot Won!");
+    document.getElementById("Result").textContent = "Bot won!";
   } else if (UserChoice == "p" && BotChoice == "r") {
-    console.log("You Won!");
+    document.getElementById("Result").textContent = "You won!";
   }
   // Paper-scissors possibilities
   else if (UserChoice == "p" && BotChoice == "s") {
-    console.log("Bot Won!");
+    document.getElementById("Result").textContent = "Bot won!";
   } else if (UserChoice == "s" && BotChoice == "p") {
-    console.log("You Won!");
+    document.getElementById("Result").textContent = "You won!";
   }
   // Scissors-rock possibilities
   else if (UserChoice == "s" && BotChoice == "r") {
-    console.log("Bot Won!");
+    document.getElementById("Result").textContent = "Bot won!";
   } else if (UserChoice == "p" && BotChoice == "r") {
-    console.log("You Won!");
+    document.getElementById("Result").textContent = "You won!";
   }
 }
