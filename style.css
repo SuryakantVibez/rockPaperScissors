@@ -1,4 +1,25 @@
+* {
+  color: var(--text);
+  background-color: var(--background);
+}
+
 body {
-  display: grid;
-  justify-content: center;
+  --text: #131510;
+  --background: #fbfcf9;
+  --primary: #a2c848;
+  --secondary: #d1ee8c;
+  --accent: #c8fa50;
+  margin: 10px;
+}
+
+button {
+  border-width: 4px;
+  border-radius: 10px;
+  height: 10rem;
+  width: 29vw;
+}
+
+.optionBtns {
+  display: flex;
+  justify-content: space-around;
 }
