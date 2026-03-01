@@ -57,7 +57,7 @@ function printResult() {
   // Scissors-rock possibilities
   else if (UserChoice == "s" && BotChoice == "r") {
     document.getElementById("Result").textContent = "Bot won!";
-  } else if (UserChoice == "p" && BotChoice == "r") {
+  } else if (UserChoice == "r" && BotChoice == "s") {
     document.getElementById("Result").textContent = "You won!";
   }
 }
