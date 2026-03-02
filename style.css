@@ -4,18 +4,13 @@
   font-family: "Share Tech", sans-serif;
 }
 
-.share-tech-regular {
-  font-weight: 400;
-  font-style: normal;
-}
-
 body {
   --text: #131510;
   --background: #fbfcf9;
   --primary: #a2c848;
   --secondary: #d1ee8c;
   --accent: #c8fa50;
-  margin: 10px;
+  padding: 10px;
 }
 
 button {
@@ -26,13 +21,28 @@ button {
   background-color: var(--accent);
   margin: 10px;
   box-shadow: #131510 3px 3px;
+  font-weight: 800;
+}
+
+.options {
+  height: 50vh;
+  border-radius: 15px;
+  background-color: hsl(84, 12%, 92%);
+}
+
+.chooseTitle {
+  max-width: fit-content;
+  margin-left: 20px;
+  background-color: hsl(84, 12%, 92%);
 }
 
 .optionBtns {
-  border-radius: 15px;
-  background-color: hsl(84, 12%, 92%);
   display: flex;
   justify-content: space-around;
+
+  margin: 10px;
+  border-radius: 15px;
+  background-color: hsl(84, 12%, 92%);
 }
 
 i {
