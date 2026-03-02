@@ -1,6 +1,12 @@
 * {
   color: var(--text);
   background-color: var(--background);
+  font-family: "Share Tech", sans-serif;
+}
+
+.share-tech-regular {
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -15,11 +21,20 @@ body {
 button {
   border-width: 4px;
   border-radius: 10px;
-  height: 10rem;
-  width: 29vw;
+  height: 5rem;
+  width: 30vw;
+  background-color: var(--accent);
+  margin: 10px;
+  box-shadow: #131510 3px 3px;
 }
 
 .optionBtns {
+  border-radius: 15px;
+  background-color: hsl(84, 12%, 92%);
   display: flex;
   justify-content: space-around;
+}
+
+i {
+  background-color: var(--accent);
 }
