@@ -10,6 +10,8 @@ body {
   --primary: #a2c848;
   --secondary: #d1ee8c;
   --accent: #c8fa50;
+  --bgTint: hsl(84, 12%, 92%);
+
   padding: 10px;
 }
 
@@ -27,13 +29,13 @@ button {
 .options {
   height: 50vh;
   border-radius: 15px;
-  background-color: hsl(84, 12%, 92%);
+  background-color: var(--bgTint);
 }
 
 .chooseTitle {
   max-width: fit-content;
   margin-left: 20px;
-  background-color: hsl(84, 12%, 92%);
+  background-color: var(--bgTint);
 }
 
 .optionBtns {
@@ -42,9 +44,29 @@ button {
 
   margin: 10px;
   border-radius: 15px;
-  background-color: hsl(84, 12%, 92%);
+  background-color: var(--bgTint);
 }
 
 i {
   background-color: var(--accent);
+}
+
+/* Playing with shapes */
+
+.toggleBtn {
+  background-color: var(--bgTint);
+  width: 80px;
+  height: 40px;
+  border-radius: 30px;
+}
+
+.toggleSlider {
+  position: relative;
+  background-color: var(--accent);
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 30px;
+  left: 0px;
 }
