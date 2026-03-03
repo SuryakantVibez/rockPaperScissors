@@ -43,23 +43,25 @@ const result = document.getElementById("Result");
 function printResult() {
   // Winning possiblity
   if (
-    (UserChoice == r && BotChoice == s) ||
-    (UserChoice == p && BotChoice == r) ||
-    (UserChoice == s && BotChoice == p)
+    (UserChoice == "r" && BotChoice == "s") ||
+    (UserChoice == "p" && BotChoice == "r") ||
+    (UserChoice == "s" && BotChoice == "p")
   ) {
     result.textContent = "You Won!";
   }
 
   // Loosing possiblity
   if (
-    (BotChoice == r && UserChoice == s) ||
-    (BotChoice == p && UserChoice == r) ||
-    (BotChoice == s && UserChoice == p)
+    (BotChoice == "r" && UserChoice == "s") ||
+    (BotChoice == "p" && UserChoice == "r") ||
+    (BotChoice == "s" && UserChoice == "p")
   ) {
     result.textContent = "Bot Won!";
   }
 }
 
-const toggleSlider = getElementById("toggleSlider");
+const toggleBtn = document.getElementById("toggleBtn");
 
-toggleSlider.style.left = "100px";
+toggleBtn.onclick = function toggleSliding() {
+  toggleBtn.style.flexDirection = "row-reverse";
+};
