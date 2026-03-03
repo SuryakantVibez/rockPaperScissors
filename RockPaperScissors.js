@@ -47,18 +47,16 @@ function printResult() {
     (UserChoice == p && BotChoice == r) ||
     (UserChoice == s && BotChoice == p)
   ) {
-
-    result.textContent{"You Won!"};
+    result.textContent = "You Won!";
   }
 
   // Loosing possiblity
-    if (
+  if (
     (BotChoice == r && UserChoice == s) ||
     (BotChoice == p && UserChoice == r) ||
     (BotChoice == s && UserChoice == p)
   ) {
-
-    result.textContent{"Bot Won!"};
+    result.textContent = "Bot Won!";
   }
 }
 
