@@ -38,29 +38,27 @@ document.getElementById("scissorBtn").onclick = function () {
   getBotChoice();
 };
 
-result = document.getElementById("Result");
+const result = document.getElementById("Result");
 
 function printResult() {
-  if (UserChoice == BotChoice) {
-    document.getElementById("Result").textContent = "Ah... Thats a draw...";
+  // Winning possiblity
+  if (
+    (UserChoice == r && BotChoice == s) ||
+    (UserChoice == p && BotChoice == r) ||
+    (UserChoice == s && BotChoice == p)
+  ) {
+
+    result.textContent{"You Won!"};
   }
-  // Rock-Paper possibilites
-  else if (UserChoice == "r" && BotChoice == "p") {
-    document.getElementById("Result").textContent = "Bot won!";
-  } else if (UserChoice == "p" && BotChoice == "r") {
-    document.getElementById("Result").textContent = "You won!";
-  }
-  // Paper-scissors possibilities
-  else if (UserChoice == "p" && BotChoice == "s") {
-    document.getElementById("Result").textContent = "Bot won!";
-  } else if (UserChoice == "s" && BotChoice == "p") {
-    document.getElementById("Result").textContent = "You won!";
-  }
-  // Scissors-rock possibilities
-  else if (UserChoice == "s" && BotChoice == "r") {
-    document.getElementById("Result").textContent = "Bot won!";
-  } else if (UserChoice == "r" && BotChoice == "s") {
-    document.getElementById("Result").textContent = "You won!";
+
+  // Loosing possiblity
+    if (
+    (BotChoice == r && UserChoice == s) ||
+    (BotChoice == p && UserChoice == r) ||
+    (BotChoice == s && UserChoice == p)
+  ) {
+
+    result.textContent{"Bot Won!"};
   }
 }
 
