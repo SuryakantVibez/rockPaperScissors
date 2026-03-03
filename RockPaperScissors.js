@@ -38,6 +38,8 @@ document.getElementById("scissorBtn").onclick = function () {
   getBotChoice();
 };
 
+result = document.getElementById("Result");
+
 function printResult() {
   if (UserChoice == BotChoice) {
     document.getElementById("Result").textContent = "Ah... Thats a draw...";
@@ -61,3 +63,7 @@ function printResult() {
     document.getElementById("Result").textContent = "You won!";
   }
 }
+
+const toggleSlider = getElementById("toggleSlider");
+
+toggleSlider.style.left = "100px";
