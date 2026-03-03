@@ -41,7 +41,6 @@ button {
 .optionBtns {
   display: flex;
   justify-content: space-around;
-
   margin: 10px;
   border-radius: 15px;
   background-color: var(--bgTint);
@@ -51,9 +50,8 @@ i {
   background-color: var(--accent);
 }
 
-/* Playing with shapes */
-
 .toggleBtn {
+  display: flex;
   background-color: var(--bgTint);
   width: 80px;
   height: 40px;
@@ -61,12 +59,20 @@ i {
 }
 
 .toggleSlider {
+  transition: all 0.2s ease-in-out;
   position: relative;
-  background-color: var(--accent);
-  top: 5px;
+  background-color: var(--primary);
   width: 30px;
   height: 30px;
   margin: 5px;
   border-radius: 30px;
-  left: 0px;
+}
+
+.toggleBtnOn {
+  flex-direction: row-reverse;
+  background-color: #c8fa50;
+}
+
+.toggleSliderAligned {
+  right: 1px;
 }

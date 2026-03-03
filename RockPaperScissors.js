@@ -63,5 +63,6 @@ function printResult() {
 const toggleBtn = document.getElementById("toggleBtn");
 
 toggleBtn.onclick = function toggleSliding() {
-  toggleBtn.style.flexDirection = "row-reverse";
+  toggleBtn.classList.toggle("toggleBtnOn");
+  document.getElementById("toggleSlider").classList.toggle("toggleSliderAligned");
 };
