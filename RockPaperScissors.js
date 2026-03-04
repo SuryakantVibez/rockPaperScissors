@@ -61,8 +61,9 @@ function printResult() {
 }
 
 const toggleBtn = document.getElementById("toggleBtn");
+const toggleSlider = document.getElementById("toggleSlider");
 
 toggleBtn.onclick = function toggleSliding() {
   toggleBtn.classList.toggle("toggleBtnOn");
-  document.getElementById("toggleSlider").classList.toggle("toggleSliderAligned");
+  toggleSlider.classList.toggle("toggleSliderOn");
 };

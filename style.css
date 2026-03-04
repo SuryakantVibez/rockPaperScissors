@@ -50,29 +50,29 @@ i {
   background-color: var(--accent);
 }
 
-.toggleBtn {
-  display: flex;
+.toggleBtnOff {
   background-color: var(--bgTint);
   width: 80px;
   height: 40px;
   border-radius: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
-.toggleSlider {
-  transition: all 0.2s ease-in-out;
+.toggleBtnOn {
+  background-color: #c8fa50;
+}
+
+.toggleSliderOff {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   position: relative;
   background-color: var(--primary);
   width: 30px;
   height: 30px;
   margin: 5px;
   border-radius: 30px;
+  top: 5px;
 }
 
-.toggleBtnOn {
-  flex-direction: row-reverse;
-  background-color: #c8fa50;
-}
-
-.toggleSliderAligned {
-  right: 1px;
+.toggleSliderOn {
+  translate: 40px;
 }
