@@ -14,8 +14,8 @@ function getBotChoice() {
   } else if (BotChoice >= 0.66 && BotChoice < 1) {
     BotChoice = "s";
   }
-  document.getElementById("botChoice").textContent =
-    "Bot chooses: " + BotChoice;
+  botChoice = document.getElementById("botChoice");
+  botChoice.textContent = "Bot chooses: " + BotChoice;
 }
 
 getBotChoice();
@@ -66,4 +66,5 @@ const toggleSlider = document.getElementById("toggleSlider");
 toggleBtn.onclick = function toggleSliding() {
   toggleBtn.classList.toggle("toggleBtnOn");
   toggleSlider.classList.toggle("toggleSliderOn");
+  botChoice.classList.toggle("cheatsOn");
 };

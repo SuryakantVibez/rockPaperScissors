@@ -63,7 +63,7 @@ i {
 }
 
 .toggleSliderOff {
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   position: relative;
   background-color: var(--primary);
   width: 30px;
@@ -75,4 +75,13 @@ i {
 
 .toggleSliderOn {
   translate: 40px;
+}
+
+.cheatsOff {
+  opacity: 0%;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.cheatsOn {
+  opacity: 100%;
 }
