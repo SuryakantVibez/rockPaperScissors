@@ -58,6 +58,10 @@ function printResult() {
   ) {
     result.textContent = "Bot Won!";
   }
+
+  if (UserChoice === BotChoice) {
+    result.textContent = "It's a tie!";
+  }
 }
 
 const toggleBtn = document.getElementById("toggleBtn");
