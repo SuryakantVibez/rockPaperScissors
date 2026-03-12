@@ -11,8 +11,12 @@ body {
   --secondary: #d1ee8c;
   --accent: #c8fa50;
   --bgTint: hsl(84, 12%, 92%);
-
   padding: 10px;
+}
+
+.gamearea {
+  max-width: 500px;
+  height: 90vh;
 }
 
 button {
@@ -27,7 +31,7 @@ button {
 }
 
 .options {
-  height: 50vh;
+  height: 40vh;
   border-radius: 15px;
   background-color: var(--bgTint);
 }
@@ -51,6 +55,9 @@ i {
 }
 
 .toggleBtnOff {
+  border-style: groove;
+  border-width: 1px;
+  border-color: #131510;
   background-color: var(--bgTint);
   width: 80px;
   height: 40px;
@@ -70,7 +77,6 @@ i {
   height: 30px;
   margin: 5px;
   border-radius: 30px;
-  top: 5px;
 }
 
 .toggleSliderOn {
@@ -84,4 +90,22 @@ i {
 
 .cheatsOn {
   opacity: 100%;
+}
+
+@media (min-width: 500px) {
+  .gamearea {
+    width: 500px;
+    position: relative;
+    margin: auto;
+    padding: 15px;
+    border-radius: 35px;
+  }
+
+  * {
+    background-color: var(--bgTint);
+  }
+
+  body {
+    background-color: rgb(231, 222, 222);
+  }
 }
