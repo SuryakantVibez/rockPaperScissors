@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="gamearea">
+      <h1>Rock Paper Scissors</h1>
+      <h1>----------------</h1>
+
+      <br />
+      <div>
+        <h2 id="botChoice" class="cheatsOff">Bot choice</h2>
+        <div class="showBotChoiceBtn">
+          <h3>Show bot choice (Cheat :-)?</h3>
+          <div id="toggleBtn" class="toggleBtnOff">
+            <div id="toggleSlider" class="toggleSliderOff"></div>
+          </div>
+        </div>
+      </div>
+      <h2 id="Result">Result</h2>
+
+      <div class="options">
+        <br />
+        <h2 class="chooseTitle">Choose</h2>
+        <div class="optionBtns">
+          <button id="rockBtn" type="button">
+            <i class="fa-solid fa-circle"></i>Rock
+          </button>
+
+          <button id="paperBtn" type="button">
+            <i class="fa-regular fa-file"></i>Paper
+          </button>
+
+          <button id="scissorBtn" type="button">
+            <i class="fa-solid fa-scissors"></i>Scissors
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="RockPaperScissors.js"></script>
+</html>
