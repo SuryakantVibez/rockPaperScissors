@@ -1,6 +1,4 @@
 * {
-  color: var(--text);
-  background-color: var(--background);
   font-family: "Share Tech", sans-serif;
 }
 
@@ -11,101 +9,41 @@ body {
   --secondary: #d1ee8c;
   --accent: #c8fa50;
   --bgTint: hsl(84, 12%, 92%);
-  padding: 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gamearea {
-  max-width: 500px;
-  height: 90vh;
+  background-color: var(--background);
+  width: 600px;
+  padding: 20px;
+  height: 100vh;
+  border-radius: 40px;
 }
 
-button {
-  border-width: 4px;
-  border-radius: 10px;
-  height: 5rem;
-  width: 30vw;
-  background-color: var(--accent);
-  margin: 10px;
-  box-shadow: #131510 3px 3px;
-  font-weight: 800;
+.score {
+  width: 50%;
 }
 
-.options {
-  height: 40vh;
-  border-radius: 15px;
-  background-color: var(--bgTint);
-}
-
-.chooseTitle {
-  max-width: fit-content;
-  margin-left: 20px;
-  background-color: var(--bgTint);
-}
-
-.optionBtns {
+.scoreCard {
   display: flex;
-  justify-content: space-around;
-  margin: 10px;
-  border-radius: 15px;
-  background-color: var(--bgTint);
-}
-
-i {
-  background-color: var(--accent);
-}
-
-.toggleBtnOff {
-  border-style: groove;
-  border-width: 1px;
-  border-color: #131510;
-  background-color: var(--bgTint);
-  width: 80px;
-  height: 40px;
-  border-radius: 30px;
-  transition: all 0.3s ease-in-out;
-}
-
-.toggleBtnOn {
-  background-color: #c8fa50;
-}
-
-.toggleSliderOff {
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5vh;
+  border-radius: 50px;
   background-color: var(--primary);
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  border-radius: 30px;
+  padding: 10px;
 }
 
-.toggleSliderOn {
-  translate: 40px;
+.scoreLine {
+  width: 3px;
+  height: 85%;
+  background-color: var(--text);
+  border-radius: 10px;
 }
 
-.cheatsOff {
-  opacity: 0%;
-  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.cheatsOn {
-  opacity: 100%;
-}
-
-@media (min-width: 500px) {
-  .gamearea {
-    width: 500px;
-    position: relative;
-    margin: auto;
-    padding: 15px;
-    border-radius: 35px;
-  }
-
-  * {
-    background-color: var(--bgTint);
-  }
-
-  body {
-    background-color: rgb(231, 222, 222);
-  }
+.scoreValue {
+  font-size: x-large;
 }
