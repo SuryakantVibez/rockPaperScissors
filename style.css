@@ -11,9 +11,14 @@ body {
   --bgTint: hsl(84, 12%, 92%);
   height: 100vh;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gamearea {
+  width: 100%;
+  max-width: 400px;
   height: 95%;
   display: grid;
   grid-template-rows: 2fr 1fr;
@@ -66,4 +71,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .gamearea {
+  }
 }
