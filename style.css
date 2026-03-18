@@ -9,22 +9,20 @@ body {
   --secondary: #d1ee8c;
   --accent: #c8fa50;
   --bgTint: hsl(84, 12%, 92%);
+  height: 100vh;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .gamearea {
-  background-color: var(--background);
-  width: 600px;
-  padding: 20px;
-  height: 100vh;
-  border-radius: 40px;
+  height: 95%;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  padding: 10px;
 }
 
-.score {
-  width: 50%;
+.topArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .scoreCard {
@@ -46,4 +44,26 @@ body {
 
 .scoreValue {
   font-size: x-large;
+}
+
+.optionCard {
+  height: fit-content;
+  max-height: 30vh;
+  padding: 7px;
+  border-radius: 30px;
+  background-color: var(--secondary);
+  display: flex;
+  justify-content: space-around;
+}
+
+.optionBtn {
+  margin: 5px 0 5px 0;
+  max-width: 30vh;
+  border-radius: 20px;
+  aspect-ratio: 1/1;
+  background-color: var(--primary);
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
