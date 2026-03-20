@@ -55,6 +55,53 @@ body {
   font-size: x-large;
 }
 
+.topBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cheats {
+  width: 50%;
+  margin-left: 10px;
+  max-height: 5vh;
+}
+
+.cheatsArea {
+  position: relative;
+  display: flex;
+  background-color: var(--secondary);
+  height: 20vh;
+  bottom: 10px;
+  border-radius: 20px;
+}
+
+.cheatsTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 8vh;
+  width: 100%;
+}
+
+.cheatsBtn {
+  width: 70px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--bgTint);
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 5px;
+}
+
+.slider {
+  width: 30px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-color: var(--accent);
+}
+
 .core {
   width: 100%;
   height: 60vh;
