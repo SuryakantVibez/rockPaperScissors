@@ -18,6 +18,7 @@ body {
 }
 
 .gamearea {
+  margin: 0 10px 0 10px;
   background-color: var(--background);
   display: flex;
   flex-direction: column;
@@ -88,11 +89,12 @@ body {
   width: 70px;
   height: 30px;
   border-radius: 30px;
-  background-color: var(--bgTint);
+  background-color: var(--background);
   display: flex;
-  justify-content: right;
+  justify-content: left;
   align-items: center;
   padding: 5px;
+  border: 2px solid var(--text);
 }
 
 .slider {
@@ -111,7 +113,7 @@ body {
 
 h3 {
   position: relative;
-  top: 25px;
+  top: 10px;
   left: 25px;
   opacity: 30%;
   font-weight: 300;
