@@ -12,10 +12,9 @@ function getBotChoice() {
   } else if (botChoice === 2) {
     botChoice = "scissor";
   }
+  console.log("Bot chooses " + botChoice);
+  getResult();
 }
-
-getBotChoice();
-// console.log(botChoice);
 
 let userChoice = null;
 
@@ -28,16 +27,42 @@ i = 0;
 // User choosing
 
 rockBtn.onclick = function () {
-  userChoice = "Rock";
-  console.log(userChoice);
+  userChoice = "rock";
+  console.log("User chooses " + userChoice);
+  getBotChoice();
 };
 
 paperBtn.onclick = function () {
-  userChoice = "Paper";
-  console.log(userChoice);
+  userChoice = "paper";
+  console.log("User chooses " + userChoice);
+  getBotChoice();
 };
 
 scissorBtn.onclick = function () {
-  userChoice = "Scissor";
-  console.log(userChoice);
+  userChoice = "scissor";
+  console.log("User chooses " + userChoice);
+  getBotChoice();
 };
+
+function getResult() {
+  // Winning cases
+  if (
+    (userChoice == "rock" && botChoice == "scissor") ||
+    (userChoice == "paper" && botChoice == "rock") ||
+    (userChoice == "scissor" && botChoice == "paper")
+  ) {
+    console.log("user won");
+  }
+  // Loosing cases
+  if (
+    (botChoice == "rock" && userChoice == "scissor") ||
+    (botChoice == "paper" && userChoice == "rock") ||
+    (botChoice == "scissor" && userChoice == "paper")
+  ) {
+    console.log("bot won");
+  }
+  // Draw case
+  if (botChoice == userChoice) {
+    console.log("Draw");
+  }
+}
