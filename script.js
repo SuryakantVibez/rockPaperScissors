@@ -15,4 +15,29 @@ function getBotChoice() {
 }
 
 getBotChoice();
-console.log(botChoice);
+// console.log(botChoice);
+
+let userChoice = null;
+
+let rockBtn = document.getElementById("rockBtn");
+let paperBtn = document.getElementById("paperBtn");
+let scissorBtn = document.getElementById("scissorBtn");
+
+i = 0;
+
+// User choosing
+
+rockBtn.onclick = function () {
+  userChoice = "Rock";
+  console.log(userChoice);
+};
+
+paperBtn.onclick = function () {
+  userChoice = "Paper";
+  console.log(userChoice);
+};
+
+scissorBtn.onclick = function () {
+  userChoice = "Scissor";
+  console.log(userChoice);
+};
