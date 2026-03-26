@@ -44,6 +44,10 @@ scissorBtn.onclick = function () {
   getBotChoice();
 };
 
+let userScore = 0;
+let botScore = 0;
+let cheats = 0;
+
 function getResult() {
   // Winning cases
   if (
@@ -51,7 +55,10 @@ function getResult() {
     (userChoice == "paper" && botChoice == "rock") ||
     (userChoice == "scissor" && botChoice == "paper")
   ) {
-    console.log("user won");
+    if (cheats == 0) {
+      userScore = userScore + 1;
+      document.getElementById("userScore").textContent = userScore;
+    }
   }
   // Loosing cases
   if (
@@ -59,10 +66,30 @@ function getResult() {
     (botChoice == "paper" && userChoice == "rock") ||
     (botChoice == "scissor" && userChoice == "paper")
   ) {
-    console.log("bot won");
+    if (cheats == 0) {
+      botScore = botScore + 1;
+      document.getElementById("botScore").textContent = botScore;
+    }
   }
   // Draw case
   if (botChoice == userChoice) {
     console.log("Draw");
   }
 }
+
+// Bot thinking animation
+
+// let thinking = document.getElementById("botThinking");
+// function thinkingAnimation() {
+//   setInterval(() => {
+//     thinking.textContent = "Bot is thinking...🪨";
+//   }, 1);
+//   setInterval(() => {
+//     thinking.textContent = "Bot is thinking...📄";
+//   }, 1);
+//   setInterval(() => {
+//     thinking.textContent = "Bot is thinking...✂️";
+//   }, 1);
+// }
+
+// thinkingAnimation();
