@@ -3,17 +3,22 @@
 let botChoice = null;
 
 function getBotChoice() {
+  botThink();
   botChoice = Math.floor(Math.random() * 3);
   // console.log(botChoice);
-  if (botChoice === 0) {
-    botChoice = "rock";
-  } else if (botChoice === 1) {
-    botChoice = "paper";
-  } else if (botChoice === 2) {
-    botChoice = "scissor";
-  }
-  console.log("Bot chooses " + botChoice);
-  getResult();
+
+  setTimeout(() => {
+    if (botChoice === 0) {
+      botChoice = "rock";
+    } else if (botChoice === 1) {
+      botChoice = "paper";
+    } else if (botChoice === 2) {
+      botChoice = "scissor";
+    }
+    console.log("Bot chooses " + botChoice);
+    getResult();
+    stopThinking();
+  }, 2000);
 }
 
 let userChoice = null;
@@ -21,8 +26,6 @@ let userChoice = null;
 let rockBtn = document.getElementById("rockBtn");
 let paperBtn = document.getElementById("paperBtn");
 let scissorBtn = document.getElementById("scissorBtn");
-
-i = 0;
 
 // User choosing
 
@@ -79,17 +82,23 @@ function getResult() {
 
 // Bot thinking animation
 
-// let thinking = document.getElementById("botThinking");
-// function thinkingAnimation() {
-//   setInterval(() => {
-//     thinking.textContent = "Bot is thinking...🪨";
-//   }, 1);
-//   setInterval(() => {
-//     thinking.textContent = "Bot is thinking...📄";
-//   }, 1);
-//   setInterval(() => {
-//     thinking.textContent = "Bot is thinking...✂️";
-//   }, 1);
-// }
+let thinkingInterval;
+let thinkingText = document.getElementById("botThinking");
+const emojis = ["🪨...3", "📄...2", "✂️...1"];
+function botThink() {
+  thinkingText.classList = "botThinking";
 
-// thinkingAnimation();
+  let i = 0;
+
+  thinkingInterval = setInterval(() => {
+    thinkingText.textContent = "Bot is thinking..." + emojis[i];
+    i++;
+    i = i % 3;
+  }, 500);
+}
+
+function stopThinking() {
+  clearInterval(thinkingInterval);
+  thinkingText.textContent = "Bot chose " + botChoice + "!";
+  thinkingText.classList = "botDecision";
+}

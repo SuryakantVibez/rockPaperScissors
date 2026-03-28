@@ -86,22 +86,27 @@ body {
 }
 
 .cheatsBtn {
-  width: 70px;
-  height: 30px;
+  height: 40%;
   border-radius: 30px;
   background-color: var(--background);
   display: flex;
   justify-content: left;
   align-items: center;
-  padding: 5px;
+  padding: 4px;
   border: 2px solid var(--text);
+  aspect-ratio: 2.5/1;
 }
 
 .slider {
-  width: 30px;
+  height: 100%;
   border-radius: 50%;
   aspect-ratio: 1/1;
   background-color: var(--accent);
+  border: 1px solid var(--primary);
+}
+
+.cheatsBtn:hover {
+  justify-content: right;
 }
 
 .core {
@@ -111,12 +116,23 @@ body {
   display: flex;
 }
 
-h3 {
+.botThinking {
   position: relative;
+  width: max-content;
   top: 10px;
   left: 25px;
   opacity: 30%;
   font-weight: 300;
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.botDecision {
+  top: 20px;
+  left: 85px;
+  position: relative;
+  transform: scale(200%);
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: max-content;
 }
 
 .coreCard {
@@ -146,4 +162,19 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 50px;
+  text-shadow: 0px 0px 25px var(--secondary);
+  transition: all ease 0.3s;
+}
+
+.optionBtn:hover {
+  font-size: 60px;
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.653);
+  /* transform: rotate(5deg); */
+}
+
+h1 {
+  position: relative;
+  font-size: 150px;
+  text-align: center;
 }
