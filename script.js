@@ -21,7 +21,7 @@ function getBotChoice() {
   }, 2000);
 }
 
-let userChoice = null;
+let userChoice;
 
 let rockBtn = document.getElementById("rockBtn");
 let paperBtn = document.getElementById("paperBtn");
@@ -47,9 +47,26 @@ scissorBtn.onclick = function () {
   getBotChoice();
 };
 
+//Cheats function
+
+let cheats = 0;
+
+const cheatsSlider = document.getElementById("cheatsSlider");
+const cheatsBtn = document.getElementById("cheatsBtn");
+cheatsBtn.onclick = function(){
+  if (cheats == 0) {
+    cheats = 1;
+    cheatsSlider.classList.toggle("cheatsOn");
+  }
+  else{
+    cheats = 0
+    cheatsSlider.classList.toggle("cheatsOn");
+  }
+  console.log(cheats)
+}
+
 let userScore = 0;
 let botScore = 0;
-let cheats = 0;
 
 function getResult() {
   // Winning cases
