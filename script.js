@@ -23,21 +23,23 @@ function getBotChoice() {
 
 let userChoice;
 
-let rockBtn = document.getElementById("rockBtn");
-let paperBtn = document.getElementById("paperBtn");
-let scissorBtn = document.getElementById("scissorBtn");
+const rockBtn = document.getElementById("rockBtn");
+const paperBtn = document.getElementById("paperBtn");
+const scissorBtn = document.getElementById("scissorBtn");
 
 // User choosing
+
+const userChoiceCard = document.getElementById("userChoice")
 
 let isBotThinking = 0;
 
 rockBtn.onclick = function () {
   if (isBotThinking == 0) {
     userChoice = "rock";
-    console.log("User chooses " + userChoice);
-    rockBtn.classList.add("BtnClicked");
+    userChoiceCard.textContent = "🪨";
+    rockBtn.classList.add("btnClicked");
     setTimeout(() => {
-      rockBtn.classList.remove("BtnClicked");
+      rockBtn.classList.remove("btnClicked");
     }, 2000);
     getBotChoice();
   }
@@ -47,10 +49,10 @@ rockBtn.onclick = function () {
 paperBtn.onclick = function () {
   if (isBotThinking == 0) {
     userChoice = "paper";
-    console.log("User chooses " + userChoice);
-    paperBtn.classList.add("BtnClicked");
+    userChoiceCard.textContent = "📄";
+    paperBtn.classList.add("btnClicked");
     setTimeout(() => {
-      paperBtn.classList.remove("BtnClicked");
+      paperBtn.classList.remove("btnClicked");
     }, 2000);
     getBotChoice();
   }
@@ -58,10 +60,10 @@ paperBtn.onclick = function () {
 scissorBtn.onclick = function () {
   if (isBotThinking == 0) {
     userChoice = "scissor";
-    console.log("User chooses " + userChoice);
-    scissorBtn.classList.add("BtnClicked");
+    userChoiceCard.textContent = "✂️";
+    scissorBtn.classList.add("btnClicked");
     setTimeout(() => {
-      scissorBtn.classList.remove("BtnClicked");
+      scissorBtn.classList.remove("btnClicked");
     }, 2000);
     getBotChoice();
   }
