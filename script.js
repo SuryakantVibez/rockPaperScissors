@@ -32,18 +32,30 @@ let scissorBtn = document.getElementById("scissorBtn");
 rockBtn.onclick = function () {
   userChoice = "rock";
   console.log("User chooses " + userChoice);
+  rockBtn.classList.add("rockBtnClicked");
+  setTimeout(() => {
+    rockBtn.classList.remove("rockBtnClicked");
+  }, 2000);
   getBotChoice();
 };
 
 paperBtn.onclick = function () {
   userChoice = "paper";
   console.log("User chooses " + userChoice);
+    paperBtn.classList.add("rockBtnClicked");
+  setTimeout(() => {
+    paperBtn.classList.remove("rockBtnClicked");
+  }, 2000);
   getBotChoice();
 };
 
 scissorBtn.onclick = function () {
   userChoice = "scissor";
   console.log("User chooses " + userChoice);
+    scissorBtn.classList.add("rockBtnClicked");
+  setTimeout(() => {
+    scissorBtn.classList.remove("rockBtnClicked");
+  }, 2000);
   getBotChoice();
 };
 

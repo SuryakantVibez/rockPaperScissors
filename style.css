@@ -175,6 +175,19 @@ body {
   transform: rotate(10deg);
 }
 
+.rockBtnClicked{
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  scale: 0.85;
+  background-color: green;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.rockBtnClicked:hover {
+  scale: 0.85;
+  font-size: 50px;
+  text-shadow: none;
+  transform: rotate(0deg);
+}
 h1 {
   position: relative;
   font-size: 150px;
