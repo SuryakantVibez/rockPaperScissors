@@ -29,34 +29,42 @@ let scissorBtn = document.getElementById("scissorBtn");
 
 // User choosing
 
+let isBotThinking = 0;
+
 rockBtn.onclick = function () {
-  userChoice = "rock";
-  console.log("User chooses " + userChoice);
-  rockBtn.classList.add("rockBtnClicked");
-  setTimeout(() => {
-    rockBtn.classList.remove("rockBtnClicked");
-  }, 2000);
-  getBotChoice();
+  if (isBotThinking == 0) {
+    userChoice = "rock";
+    console.log("User chooses " + userChoice);
+    rockBtn.classList.add("BtnClicked");
+    setTimeout(() => {
+      rockBtn.classList.remove("BtnClicked");
+    }, 2000);
+    getBotChoice();
+  }
+
 };
 
 paperBtn.onclick = function () {
-  userChoice = "paper";
-  console.log("User chooses " + userChoice);
-    paperBtn.classList.add("rockBtnClicked");
-  setTimeout(() => {
-    paperBtn.classList.remove("rockBtnClicked");
-  }, 2000);
-  getBotChoice();
+  if (isBotThinking == 0) {
+    userChoice = "paper";
+    console.log("User chooses " + userChoice);
+    paperBtn.classList.add("BtnClicked");
+    setTimeout(() => {
+      paperBtn.classList.remove("BtnClicked");
+    }, 2000);
+    getBotChoice();
+  }
 };
-
 scissorBtn.onclick = function () {
-  userChoice = "scissor";
-  console.log("User chooses " + userChoice);
-    scissorBtn.classList.add("rockBtnClicked");
-  setTimeout(() => {
-    scissorBtn.classList.remove("rockBtnClicked");
-  }, 2000);
-  getBotChoice();
+  if (isBotThinking == 0) {
+    userChoice = "scissor";
+    console.log("User chooses " + userChoice);
+    scissorBtn.classList.add("BtnClicked");
+    setTimeout(() => {
+      scissorBtn.classList.remove("BtnClicked");
+    }, 2000);
+    getBotChoice();
+  }
 };
 
 //Cheats function
@@ -115,6 +123,7 @@ let thinkingInterval;
 let thinkingText = document.getElementById("botThinking");
 const emojis = ["🪨...3", "📄...2", "✂️...1"];
 function botThink() {
+  isBotThinking = 1;
   thinkingText.classList = "botThinking";
 
   let i = 0;
@@ -130,4 +139,5 @@ function stopThinking() {
   clearInterval(thinkingInterval);
   thinkingText.textContent = "Bot chose " + botChoice + "!";
   thinkingText.classList = "botDecision";
+  isBotThinking = 0;
 }
