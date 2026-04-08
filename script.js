@@ -9,18 +9,18 @@ function getBotChoice() {
 
   setTimeout(() => {
     if (botChoice === 0) {
-      botChoice = "rock";
+      botChoice = "Rock";
     } else if (botChoice === 1) {
-      botChoice = "paper";
+      botChoice = "Paper";
     } else if (botChoice === 2) {
-      botChoice = "scissor";
+      botChoice = "Scissor";
     }
     console.log("Bot chooses " + botChoice);
     getResult();
     stopThinking();
   }, 2000);
 }
-
+let gameResult = document.getElementById("gameResult");
 let userChoice;
 
 const rockBtn = document.getElementById("rockBtn");
@@ -28,14 +28,14 @@ const paperBtn = document.getElementById("paperBtn");
 const scissorBtn = document.getElementById("scissorBtn");
 
 // User choosing
-
-const userChoiceCard = document.getElementById("userChoice")
+gameResult.classList.toggle = "gameResultActive";
+const userChoiceCard = document.getElementById("userChoice");
 
 let isBotThinking = 0;
 
 rockBtn.onclick = function () {
   if (isBotThinking == 0) {
-    userChoice = "rock";
+    userChoice = "Rock";
     userChoiceCard.textContent = "🪨";
     rockBtn.classList.add("btnClicked");
     setTimeout(() => {
@@ -43,12 +43,11 @@ rockBtn.onclick = function () {
     }, 2000);
     getBotChoice();
   }
-
 };
 
 paperBtn.onclick = function () {
   if (isBotThinking == 0) {
-    userChoice = "paper";
+    userChoice = "Paper";
     userChoiceCard.textContent = "📄";
     paperBtn.classList.add("btnClicked");
     setTimeout(() => {
@@ -57,9 +56,10 @@ paperBtn.onclick = function () {
     getBotChoice();
   }
 };
+
 scissorBtn.onclick = function () {
   if (isBotThinking == 0) {
-    userChoice = "scissor";
+    userChoice = "Scissor";
     userChoiceCard.textContent = "✂️";
     scissorBtn.classList.add("btnClicked");
     setTimeout(() => {
@@ -81,11 +81,13 @@ cheatsBtn.onclick = function(){
     cheatsSlider.classList.toggle("cheatsOn");
   }
   else{
-    cheats = 0
+    cheats = 0;
     cheatsSlider.classList.toggle("cheatsOn");
   }
-  console.log(cheats)
+  console.log(cheats);
 }
+
+// Game engine
 
 let userScore = 0;
 let botScore = 0;
@@ -93,29 +95,34 @@ let botScore = 0;
 function getResult() {
   // Winning cases
   if (
-    (userChoice == "rock" && botChoice == "scissor") ||
-    (userChoice == "paper" && botChoice == "rock") ||
-    (userChoice == "scissor" && botChoice == "paper")
+    (userChoice == "Rock" && botChoice == "Scissor") ||
+    (userChoice == "Paper" && botChoice == "Rock") ||
+    (userChoice == "Scissor" && botChoice == "Paper")
   ) {
     if (cheats == 0) {
       userScore = userScore + 1;
       document.getElementById("userScore").textContent = userScore;
     }
+      gameResult.textContent =( "You won! " + userChoice + " beats " + botChoice + ".");
+      gameResult.classList.toggle = "gameResultActive";
   }
   // Loosing cases
   if (
-    (botChoice == "rock" && userChoice == "scissor") ||
-    (botChoice == "paper" && userChoice == "rock") ||
-    (botChoice == "scissor" && userChoice == "paper")
+    (botChoice == "Rock" && userChoice == "Scissor") ||
+    (botChoice == "Paper" && userChoice == "Rock") ||
+    (botChoice == "Scissor" && userChoice == "Paper")
   ) {
     if (cheats == 0) {
       botScore = botScore + 1;
       document.getElementById("botScore").textContent = botScore;
     }
+      gameResult.textContent =( "You lost... " + botChoice + " beats " + userChoice + ".");
+      gameResult.classList.toggle = "gameResultActive";
   }
   // Draw case
   if (botChoice == userChoice) {
-    console.log("Draw");
+      gameResult.textContent ="Welp! That's a draw.";
+      gameResult.classList.toggle = "gameResultActive";
   }
 }
 
