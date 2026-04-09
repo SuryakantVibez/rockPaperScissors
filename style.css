@@ -9,7 +9,7 @@ body {
   --secondary: #d1ee8c;
   --accent: #c8fa50;
   --bgTint: hsl(84, 12%, 92%);
-  height: 100vh;
+  height: 100dvh;
   margin: 0;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 5vh;
+  height: 5dvh;
   border-radius: 50px;
   background-color: var(--primary);
   padding: 10px;
@@ -65,14 +65,14 @@ body {
 .cheats {
   width: 50%;
   margin-left: 10px;
-  max-height: 5vh;
+  max-height: 5dvh;
 }
 
 .cheatsArea {
   position: relative;
   display: flex;
   background-color: var(--secondary);
-  height: 20vh;
+  height: 20dvh;
   bottom: 10px;
   border-radius: 20px;
 }
@@ -81,7 +81,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 8vh;
+  height: 8dvh;
   width: 100%;
 }
 
@@ -112,8 +112,8 @@ body {
 
 .core {
   width: 100%;
-  height: 60vh;
-  max-height: 70vh;
+  height: 60dvh;
+  max-height: 70dvh;
   display: flex;
 }
 
@@ -129,13 +129,11 @@ body {
 }
 
 .botDecision {
-    margin:30px 0 0 30px;
-
+  margin:30px 0 0 30px;
   position: relative;
   width: max-content;
   font-size: 200%;
   z-index: 1;
-  /* transform: translateX(50%); */
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -173,7 +171,7 @@ h1 {
 
 .optionCard {
   height: fit-content;
-  max-height: 30vh;
+  max-height: 30dvh;
   padding: 7px;
   border-radius: 30px;
   background-color: var(--secondary);
@@ -183,7 +181,7 @@ h1 {
 
 .optionBtn {
   margin: 5px 0 5px 0;
-  max-width: 30vh;
+  max-width: 30dvh;
   border-radius: 20px;
   aspect-ratio: 1/1;
   background-color: var(--primary);
