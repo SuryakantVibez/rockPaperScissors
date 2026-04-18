@@ -12,6 +12,7 @@ cheatsBtn.onclick = function () {
   } else if (cheats == 1) {
     cheats = 0;
     cheatsSlider.classList.toggle("cheatsOn");
+    gameResult.textContent = "Choose the options below";
   }
 };
 
@@ -27,8 +28,8 @@ function cheatsEngine() {
   if (cheatsBotChoice === 2) {
     cheatsBotChoice = "Scissor";
   }
-  // alert(cheatsBotChoice);
-  getResult();
+  gameResult.textContent = "Bot will choose " + cheatsBotChoice;
+  gameResult.classList.toggle = "gameResultActive";
 }
 
 // Bot choosing
@@ -141,11 +142,6 @@ function getResult() {
     gameResult.textContent = "Welp! That's a draw.";
     gameResult.classList.toggle = "gameResultActive";
   }
-
-  if (cheats === 1) {
-    gameResult.textContent = "Bot will choose " + cheatsBotChoice;
-    gameResult.classList.toggle = "gameResultActive";
-  }
 }
 
 // Bot thinking animation
@@ -171,5 +167,7 @@ function stopThinking() {
   thinkingText.textContent = "Bot chose " + botChoice + "!";
   thinkingText.classList = "botDecision";
   isBotThinking = 0;
-  cheatsEngine();
+  if (cheats === 1) {
+    cheatsEngine();
+  }
 }
