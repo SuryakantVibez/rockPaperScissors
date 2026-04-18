@@ -36,9 +36,6 @@ function cheatsEngine() {
 let botChoice;
 
 function getBotChoice() {
-  if (cheats === 1) {
-    cheatsEngine();
-  }
   botThink();
   botChoice = Math.floor(Math.random() * 3);
 
@@ -115,40 +112,34 @@ let userScore = 0;
 let botScore = 0;
 
 function getResult() {
-  if (cheats === 0) {
-    // Winning cases
-    if (
-      (userChoice == "Rock" && botChoice == "Scissor") ||
-      (userChoice == "Paper" && botChoice == "Rock") ||
-      (userChoice == "Scissor" && botChoice == "Paper")
-    ) {
-      if (cheats == 0) {
-        userScore = userScore + 1;
-        document.getElementById("userScore").textContent = userScore;
-      }
-      gameResult.textContent =
-        "You won! " + userChoice + " beats " + botChoice + ".";
-      gameResult.classList.toggle = "gameResultActive";
-    }
-    // Loosing cases
-    if (
-      (botChoice == "Rock" && userChoice == "Scissor") ||
-      (botChoice == "Paper" && userChoice == "Rock") ||
-      (botChoice == "Scissor" && userChoice == "Paper")
-    ) {
-      if (cheats == 0) {
-        botScore = botScore + 1;
-        document.getElementById("botScore").textContent = botScore;
-      }
-      gameResult.textContent =
-        "You lost... " + botChoice + " beats " + userChoice + ".";
-      gameResult.classList.toggle = "gameResultActive";
-    }
-    // Draw case
-    if (botChoice == userChoice) {
-      gameResult.textContent = "Welp! That's a draw.";
-      gameResult.classList.toggle = "gameResultActive";
-    }
+  // Winning cases
+  if (
+    (userChoice == "Rock" && botChoice == "Scissor") ||
+    (userChoice == "Paper" && botChoice == "Rock") ||
+    (userChoice == "Scissor" && botChoice == "Paper")
+  ) {
+    userScore = userScore + 1;
+    document.getElementById("userScore").textContent = userScore;
+    gameResult.textContent =
+      "You won! " + userChoice + " beats " + botChoice + ".";
+    gameResult.classList.toggle = "gameResultActive";
+  }
+  // Loosing cases
+  if (
+    (botChoice == "Rock" && userChoice == "Scissor") ||
+    (botChoice == "Paper" && userChoice == "Rock") ||
+    (botChoice == "Scissor" && userChoice == "Paper")
+  ) {
+    botScore = botScore + 1;
+    document.getElementById("botScore").textContent = botScore;
+    gameResult.textContent =
+      "You lost... " + botChoice + " beats " + userChoice + ".";
+    gameResult.classList.toggle = "gameResultActive";
+  }
+  // Draw case
+  if (botChoice == userChoice) {
+    gameResult.textContent = "Welp! That's a draw.";
+    gameResult.classList.toggle = "gameResultActive";
   }
 
   if (cheats === 1) {
@@ -180,4 +171,5 @@ function stopThinking() {
   thinkingText.textContent = "Bot chose " + botChoice + "!";
   thinkingText.classList = "botDecision";
   isBotThinking = 0;
+  cheatsEngine();
 }
