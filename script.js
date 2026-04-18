@@ -1,3 +1,24 @@
+//Sounds list/functions
+
+function playClickAudio() {
+  new Audio("media/btnPress.mp3").play();
+}
+function playUserWonAudio() {
+  new Audio("media/userWon.mp3").play();
+}
+function playBotWonAudio() {
+  new Audio("media/botWon.mp3").play();
+}
+function playUserPointAudio() {
+  new Audio("media/userPoint.mp3").play();
+}
+function playBotPointAudio() {
+  new Audio("media/botPoint.mp3").play();
+}
+function playThinkBeepAudio() {
+  new Audio("media/thinkBeep.mp3").play();
+}
+
 //Cheats function
 
 let cheats = 0;
@@ -14,6 +35,7 @@ cheatsBtn.onclick = function () {
     cheatsSlider.classList.toggle("cheatsOn");
     gameResult.textContent = "Choose the options below";
   }
+  playClickAudio();
 };
 
 let cheatsBotChoice;
@@ -80,6 +102,7 @@ rockBtn.onclick = function () {
       rockBtn.classList.remove("btnClicked");
     }, 2000);
     getBotChoice();
+    playClickAudio();
   }
 };
 
@@ -92,6 +115,7 @@ paperBtn.onclick = function () {
       paperBtn.classList.remove("btnClicked");
     }, 2000);
     getBotChoice();
+    playClickAudio();
   }
 };
 
@@ -104,6 +128,7 @@ scissorBtn.onclick = function () {
       scissorBtn.classList.remove("btnClicked");
     }, 2000);
     getBotChoice();
+    playClickAudio();
   }
 };
 
@@ -119,6 +144,7 @@ function getResult() {
     (userChoice == "Paper" && botChoice == "Rock") ||
     (userChoice == "Scissor" && botChoice == "Paper")
   ) {
+    playUserPointAudio();
     userScore = userScore + 1;
     document.getElementById("userScore").textContent = userScore;
     gameResult.textContent =
@@ -132,6 +158,7 @@ function getResult() {
     (botChoice == "Scissor" && userChoice == "Paper")
   ) {
     botScore = botScore + 1;
+    playBotPointAudio();
     document.getElementById("botScore").textContent = botScore;
     gameResult.textContent =
       "You lost... " + botChoice + " beats " + userChoice + ".";
@@ -154,11 +181,16 @@ function botThink() {
   thinkingText.classList = "botThinking";
 
   let i = 0;
+  let thinkAudioOccurrence = 0;
 
   thinkingInterval = setInterval(() => {
     thinkingText.textContent = "Bot is thinking..." + emojis[i];
-    i++;
+    if (thinkAudioOccurrence < 3) {
+      playThinkBeepAudio();
+      thinkAudioOccurrence++;
+    }
     i = i % 3;
+    i++;
   }, 500);
 }
 
