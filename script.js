@@ -169,6 +169,9 @@ function getResult() {
     gameResult.textContent = "Welp! That's a draw.";
     gameResult.classList.toggle = "gameResultActive";
   }
+  if (userScore === 3 || botScore === 3) {
+    gameEnd();
+  }
 }
 
 // Bot thinking animation
@@ -176,12 +179,12 @@ function getResult() {
 let thinkingInterval;
 let thinkingText = document.getElementById("botThinking");
 const emojis = ["🪨...3", "📄...2", "✂️...1"];
+
 function botThink() {
+  i = 0;
+  let thinkAudioOccurrence = 0;
   isBotThinking = 1;
   thinkingText.classList = "botThinking";
-
-  let i = 0;
-  let thinkAudioOccurrence = 0;
 
   thinkingInterval = setInterval(() => {
     thinkingText.textContent = "Bot is thinking..." + emojis[i];
@@ -202,4 +205,11 @@ function stopThinking() {
   if (cheats === 1) {
     cheatsEngine();
   }
+}
+
+// Game end dialog
+let dialog = document.getElementById("gameEnd");
+function gameEnd() {
+  dialog.showModal();
+  document.body.classList.add("gameEnded");
 }

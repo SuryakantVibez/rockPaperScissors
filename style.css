@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #afafaf61;
+  transition: all 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .gameArea {
@@ -96,9 +97,8 @@ body {
   aspect-ratio: 2.5/1;
 }
 
-.cheatsOn{
+.cheatsOn {
   transform: translateX(130%);
-  
 }
 
 .slider {
@@ -118,18 +118,18 @@ body {
 }
 
 .botThinking {
-  margin:30px 0 0 30px;
+  margin: 30px 0 0 30px;
   opacity: 30%;
   font-weight: 300;
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.thinkingCard{
+.thinkingCard {
   height: 15%;
 }
 
 .botDecision {
-  margin:30px 0 0 30px;
+  margin: 30px 0 0 30px;
   position: relative;
   width: max-content;
   font-size: 200%;
@@ -153,7 +153,7 @@ h1 {
   margin: 0;
 }
 
-.bottomText{
+.bottomText {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -201,11 +201,13 @@ h1 {
   transform: rotate(10deg);
 }
 
-.btnClicked{
+.btnClicked {
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   scale: 0.85;
   background-color: green;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .btnClicked:hover {
@@ -213,4 +215,21 @@ h1 {
   font-size: 50px;
   text-shadow: none;
   transform: rotate(0deg);
+}
+
+dialog {
+  background-color: var(--primary);
+  border-radius: 20px;
+  aspect-ratio: 2/3 !important;
+  max-width: 400px;
+  max-height: 70dvh;
+  height: 60dvh;
+  opacity: 80%;
+  transition: all 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-width: 5px;
+}
+
+.gameEnded {
+  filter: blur(15px);
 }
