@@ -208,8 +208,13 @@ function stopThinking() {
 }
 
 // Game end dialog
-let dialog = document.getElementById("gameEnd");
+const dialog = document.getElementById("gameEnd");
+
 function gameEnd() {
   dialog.showModal();
   document.body.classList.add("gameEnded");
+
+  if (userScore === 3) {
+    document.querySelector("gameEndResult").textContent = "You won!";
+  }
 }

@@ -69,7 +69,28 @@
     </div>
 
     <dialog id="gameEnd">
-      <div class="dialogContainer"></div>
+      <div class="dialogContainer">
+        <div class="gameEndTop">
+          <div class="trophyIcon">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h1 id="gameWinner">Winner here!</h1>
+          <div class="endGameScoreCard">
+            <div class="card">
+              <div class="endUserScore">6</div>
+              <p>You</p>
+            </div>
+            <div class="card">
+              <div class="endBotScore">7</div>
+              <p>Bot</p>
+            </div>
+          </div>
+        </div>
+        <div class="gameEndBottom">
+          <p id="gameEndText">Phenomenal! Someone defeated someone else!</p>
+          <div class="replayBtn" onclick="location.reload()">Play Again</div>
+        </div>
+      </div>
     </dialog>
   </body>
   <script src="script.js"></script>
