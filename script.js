@@ -169,7 +169,7 @@ function getResult() {
     gameResult.textContent = "Welp! That's a draw.";
     gameResult.classList.toggle = "gameResultActive";
   }
-  if (userScore === 3 || botScore === 3) {
+  if (userScore === 5 || botScore === 5) {
     gameEnd();
   }
 }
@@ -212,9 +212,33 @@ const dialog = document.getElementById("gameEnd");
 
 function gameEnd() {
   dialog.showModal();
-  document.body.classList.add("gameEnded");
+  document.body.classList.add("#gameEnded");
 
-  if (userScore === 3) {
-    document.querySelector("gameEndResult").textContent = "You won!";
+  // Filler text
+  const botWon = [
+    "Unfortunate. The bot takes it...",
+    "Close, but not enough...",
+    "Outplayed. Try again",
+  ];
+  const userWon = [
+    "Phenomenal. You took that one!",
+    "Well played. That was yours!",
+    "Decisive. You came out on top!",
+  ];
+  let x = Math.floor(Math.random() * 3);
+  if (userScore === 5) {
+    document.querySelector("#gameWinner").textContent = "You won!";
+    document.querySelector("#fillerText").textContent =
+      "- " + userWon[x] + " -";
+    playUserWonAudio();
   }
+  if (botScore === 5) {
+    document.querySelector("#gameWinner").textContent = "You lost...";
+    document.querySelector("#fillerText").textContent = "- " + botWon[x] + " -";
+    playBotWonAudio();
+  }
+
+  // Score card
+  document.querySelector("#endUserScore").textContent = userScore;
+  document.querySelector("#endBotScore").textContent = botScore;
 }

@@ -221,10 +221,10 @@ body {
 dialog {
   background-color: var(--secondary);
   border-radius: 20px;
-  aspect-ratio: 2/3 !important;
+  aspect-ratio: 2/3;
   max-height: 70dvh;
   height: 60dvh;
-  max-width: 90dvw;
+  max-width: 90dvw !important;
   transition: all 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   border-width: 5px;
@@ -308,9 +308,10 @@ p {
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   font-weight: 800;
   font-size: 2.5rem;
+  transition: all 0.5s ease;
 }
 
 .replayBtn:hover {
-  background: linear-gradient(135deg, #c8fa50 0%, #a2c848 40%, #7fb52e 100%);
-  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.822) 0px 22px 70px 4px;
 }

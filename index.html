@@ -68,25 +68,25 @@
       </div>
     </div>
 
-    <dialog open id="gameEnd">
+    <dialog id="gameEnd">
       <div class="dialogContainer">
         <div class="trophyIcon">
           <i class="fa-solid fa-award"></i>
         </div>
-        <h1 id="gameWinner">Winner here!</h1>
+        <h1 id="gameWinner">Result here!</h1>
         <div class="endGameScoreCard">
           <div class="card">
-            <div class="endScore">6</div>
+            <div id="endUserScore" class="endScore">6</div>
             <p class="entityName">You</p>
           </div>
           <div class="scoreLine"></div>
           <div class="card">
-            <div class="endScore">7</div>
+            <div id="endBotScore" class="endScore">7</div>
             <p class="entityName">Bot</p>
           </div>
         </div>
-        <p id="gameEndText">Phenomenal! Someone defeated someone else!</p>
-        <div class="replayBtn" onclick="location.reload()">Play Again</div>
+        <p id="fillerText">Phenomenal! Someone defeated someone else!</p>
+        <div class="replayBtn" onclick="location.reload()">Play Again ></div>
       </div>
     </dialog>
   </body>
